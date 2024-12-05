@@ -142,6 +142,7 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">w12 << <a href='w12.html'>Previous</a> <a href='HW 2.html'>Next</a> >> HW 2<br /><h1>w13_hw</h1>
+<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/tgu1O5peoig" width="560"></iframe></p>
 <!-- 導入 brython 程式庫 -->
 <p>
 <script src="./../cmsimde/static/brython.js"></script>
@@ -172,11 +173,90 @@ ctx.beginPath()
 ctx.rect(10, 10, 200, 200)
 ctx.rect(110, 110, 200, 200)
 ctx.stroke()
+
 ctx.lineWidth = 1
 ctx.strokeStyle = 'blue'  
 ctx.beginPath()
 ctx.moveTo(10, 10)
 ctx.lineTo(210, 210)
+ctx.stroke()
+
+from browser import html
+from browser import document as doc
+
+# 建立 canvas
+canvas = html.CANVAS(width=300, height=300)  # 畫布大小
+brython_div = doc["brython_div1"]  # HTML 中的容器元素
+brython_div <= canvas
+
+ctx = canvas.getContext("2d")
+ctx.lineWidth = 2  # 線條寬度設定
+
+# 第一個矩形的參數
+rect1_x, rect1_y = 50, 50  # 矩形左上角座標
+rect1_size = 100  # 矩形邊長
+
+# 第二個矩形的參數
+rect2_x, rect2_y = 100, 100  # 矩形左上角座標
+rect2_size = 100  # 矩形邊長
+
+# 填充第一個矩形的外接圓內部
+center_x1 = rect1_x + rect1_size / 2
+center_y1 = rect1_y + rect1_size / 2
+radius1 = (rect1_size * (2 ** 0.5)) / 2
+ctx.fillStyle = "rgba(255, 255, 0, 0.5)"  # 半透明黃色
+ctx.beginPath()
+ctx.arc(center_x1, center_y1, radius1, 0, 2 * 3.14159)
+ctx.fill()
+
+# 填充第二個矩形的外接圓內部
+center_x2 = rect2_x + rect2_size / 2
+center_y2 = rect2_y + rect2_size / 2
+radius2 = (rect2_size * (2 ** 0.5)) / 2
+ctx.fillStyle = "rgba(128, 0, 128, 0.5)"  # 半透明紫色
+ctx.beginPath()
+ctx.arc(center_x2, center_y2, radius2, 0, 2 * 3.14159)
+ctx.fill()
+
+# 填充第一個矩形內部
+ctx.fillStyle = "lightblue"  # 填充顏色
+ctx.beginPath()
+ctx.rect(rect1_x, rect1_y, rect1_size, rect1_size)
+ctx.fill()
+
+# 填充第二個矩形內部
+ctx.fillStyle = "lightgreen"  # 填充顏色
+ctx.beginPath()
+ctx.rect(rect2_x, rect2_y, rect2_size, rect2_size)
+ctx.fill()
+
+# 繪製第一個矩形的對角線
+ctx.strokeStyle = 'blue'  # 對角線顏色
+ctx.beginPath()
+ctx.moveTo(rect1_x, rect1_y)  # 左上角
+ctx.lineTo(rect1_x + rect1_size, rect1_y + rect1_size)  # 右下角
+ctx.stroke()
+
+# 繪製第一個矩形的邊框
+ctx.strokeStyle = "red"  # 邊框顏色
+ctx.beginPath()
+ctx.rect(rect1_x, rect1_y, rect1_size, rect1_size)
+ctx.stroke()
+
+# 繪製第二個矩形的邊框
+ctx.beginPath()
+ctx.rect(rect2_x, rect2_y, rect2_size, rect2_size)
+ctx.stroke()
+
+# 繪製第一個矩形的外接圓邊框
+ctx.strokeStyle = 'black'  # 外接圓邊框顏色
+ctx.beginPath()
+ctx.arc(center_x1, center_y1, radius1, 0, 2 * 3.14159)
+ctx.stroke()
+
+# 繪製第二個矩形的外接圓邊框
+ctx.beginPath()
+ctx.arc(center_x2, center_y2, radius2, 0, 2 * 3.14159)
 ctx.stroke()
 </script>
 </p><br />w12 << <a href='w12.html'>Previous</a> <a href='HW 2.html'>Next</a> >> HW 2</div>
