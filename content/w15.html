@@ -142,11 +142,247 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">w14 << <a href='w14.html'>Previous</a> <a href='HW 2.html'>Next</a> >> HW 2<br /><h1>w15</h1>
-<p>題目一: 請利用 Gist 與 Brython 程式環境, 在個人的課程網站中新增一個頁面, 標題為 w15, 以"從 1 累加到 100"作為 anchor 的連結標題, 使用者點擊該連結之後, 可從各自的 Brython 頁面執行程式.</p>
-<p>題目二: 延伸上題, 設計一個函式 addto(1, 100), 可以完成上述的累加結果. (以"addto"作為連結標題)</p>
-<p>題目三: 延伸上題, 設計一個函式 add_only_even(1, 100), 可以完成從第一個輸入整數, 累加到第二個輸入變數的累加結果. 頁面中請以 <span>add_only_even 作為連結標題.</span></p>
-<p><span>題目四: 延伸上題, 設計一個函式 add_avoid_8(1, 100), 可以完成從第一個輸入整數, 累加到第二個輸入變數的累加過程, 必須避開數字出現"8"的整數, 頁面中請以 add_avoid_8 作為連結標題.</span></p>
-<p><span></span></p><br />w14 << <a href='w14.html'>Previous</a> <a href='HW 2.html'>Next</a> >> HW 2</div>
+<p><em><strong>題目一</strong></em>: 請利用 Gist 與 Brython 程式環境, 在個人的課程網站中新增一個頁面, 標題為 w15, 以"從 1 累加到 100"作為 anchor 的連結標題, 使用者點擊該連結之後, 可從各自的 Brython 頁面執行程式.</p>
+<p>1.<a href="https://mdecp2024.github.io/hw-41323140/content/Brython.html?src=https://gist.githubusercontent.com/41323140/f010c710f0ac6fe11173c60156798f6a/raw/437d888d5eb889c2d6f46bf3a764d361429a9f18/hw1.py">從 1 累加到 100</a></p>
+<p></p>
+<p><em><strong>題目二</strong></em>: 延伸上題, 設計一個函式 addto(1, 100), 可以完成上述的累加結果. (以"addto"作為連結標題)</p>
+<p>2.<a href="https://mdecp2024.github.io/hw-41323140/content/Brython.html?src=https://gist.githubusercontent.com/41323140/f010c710f0ac6fe11173c60156798f6a/raw/437d888d5eb889c2d6f46bf3a764d361429a9f18/hw2.py">addto</a></p>
+<p><strong>設計思考</strong>：</p>
+<ol>
+<li>
+<p>Python 中累加整數區間最簡易的手法是使用<span> </span><code>range()</code><span> </span>函式生成序列，然後用<span> </span><code>sum()</code><span> </span>將其加總。</p>
+</li>
+<li>
+<p><code>range(start, end+1)</code><span> </span>會產生從<span> </span><code>start</code><span> </span>到<span> </span><code>end</code><span> </span>的所有整數值。</p>
+</li>
+<li>
+<p>最後將此序列直接套入<span> </span><code>sum()</code><span> </span>即可得到區間總和。</p>
+</li>
+</ol>
+<p><strong>程式碼範例</strong></p>
+<div>
+<div class="syntaxhighlighter html" id="highlighter_418440">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+<div class="line number6 index5 alt1">6</div>
+<div class="line number7 index6 alt2">7</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="html plain">"""addto"""</code></div>
+<div class="line number2 index1 alt1"><code class="html plain">def addto(start, end):</code></div>
+<div class="line number3 index2 alt2"><code class="html spaces">    </code><code class="html plain">return sum(range(start, end + 1))</code></div>
+<div class="line number4 index3 alt1"> </div>
+<div class="line number5 index4 alt2"><code class="html plain"># 範例呼叫</code></div>
+<div class="line number6 index5 alt1"><code class="html plain">result = addto(1, 100)</code></div>
+<div class="line number7 index6 alt2"><code class="html plain">print(result)  # 輸出 5050</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><strong>程式碼逐行解說</strong></p>
+<ul>
+<li>
+<p><code>def addto(start, end):</code><br/>定義一個函式名稱為<span> </span><code>addto</code>，有兩個參數<span> </span><code>start</code><span> </span>與<span> </span><code>end</code>，代表加總的起始值和結束值。</p>
+</li>
+<li>
+<p><code>return sum(range(start, end + 1))</code><br/><code>range(start, end+1)</code><span> </span>會產生從<span> </span><code>start</code><span> </span>到<span> </span><code>end</code><span> </span>的整數序列。例如<span> </span><code>range(1, 101)</code><span> </span>代表 1 到 100。<br/><code>sum(...)</code><span> </span>會將<span> </span><code>range()</code><span> </span>所產生的整數相加。<br/>使用<span> </span><code>return</code><span> </span>將計算結果回傳給呼叫端。</p>
+</li>
+<li>
+<p><code>result = addto(1, 100)</code><br/>呼叫<span> </span><code>addto(1, 100)</code>，會得到 1 加到 100 的總和結果，預期是 5050。</p>
+</li>
+<li>
+<p><code>print(result)</code><br/>將計算的結果印出來。</p>
+<p></p>
+</li>
+</ul>
+<p><strong>執行結果與心得</strong></p>
+<p>執行後結果為<span> </span><code>5050</code>，符合數學上高斯求和公式<span> </span><code>(100*101)/2</code><span> </span>的結果。<br/>透過內建函式<span> </span><code>sum()</code><span> </span>與<span> </span><code>range()</code>，能快速且直觀地完成區間加總。</p>
+<p></p>
+<p></p>
+<p></p>
+<p><em><strong>題目三</strong></em>: 延伸上題, 設計一個函式 add_only_even(1, 100), 可以完成從第一個輸入整數, 累加到第二個輸入變數的累加結果. 頁面中請以 <span>add_only_even 作為連結標題.</span></p>
+<p><span>3.<a href="https://mdecp2024.github.io/hw-41323140/content/Brython.html?src=https://gist.githubusercontent.com/41323140/f010c710f0ac6fe11173c60156798f6a/raw/437d888d5eb889c2d6f46bf3a764d361429a9f18/hw3.py">add_only_even</a></span></p>
+<p><strong>設計思考</strong>：</p>
+<ol>
+<li>
+<p>除了使用<span> </span><code>sum(range())</code>，我們需要過濾只加偶數，因此有兩種思路：</p>
+<ul>
+<li>
+<p>使用條件判斷<span> </span><code>if num % 2 == 0</code><span> </span>在迴圈中累加。</p>
+</li>
+<li>
+<p>或使用 list comprehension 與 sum 搭配條件篩選。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>在此範例中，我們選擇單純迴圈判斷，較直觀易懂。</p>
+</li>
+</ol>
+<p><strong>程式碼範例</strong></p>
+<div>
+<div class="syntaxhighlighter html" id="highlighter_705337">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+<div class="line number6 index5 alt1">6</div>
+<div class="line number7 index6 alt2">7</div>
+<div class="line number8 index7 alt1">8</div>
+<div class="line number9 index8 alt2">9</div>
+<div class="line number10 index9 alt1">10</div>
+<div class="line number11 index10 alt2">11</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="html plain">"""add_only_even"""</code></div>
+<div class="line number2 index1 alt1"><code class="html plain">def add_only_even(start, end):</code></div>
+<div class="line number3 index2 alt2"><code class="html spaces">    </code><code class="html plain">total = 0</code></div>
+<div class="line number4 index3 alt1"><code class="html spaces">    </code><code class="html plain">for num in range(start, end + 1):</code></div>
+<div class="line number5 index4 alt2"><code class="html spaces">        </code><code class="html plain">if num % 2 == 0:</code></div>
+<div class="line number6 index5 alt1"><code class="html spaces">            </code><code class="html plain">total += num</code></div>
+<div class="line number7 index6 alt2"><code class="html spaces">    </code><code class="html plain">return total</code></div>
+<div class="line number8 index7 alt1"> </div>
+<div class="line number9 index8 alt2"><code class="html plain"># 範例呼叫</code></div>
+<div class="line number10 index9 alt1"><code class="html plain">result = add_only_even(1, 100)</code></div>
+<div class="line number11 index10 alt2"><code class="html plain">print(result)  # 將輸出 2 + 4 + 6 + ... + 100 的和</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><strong>程式碼逐行解說</strong></p>
+<ul>
+<li>
+<p><code>def add_only_even(start, end):</code><br/>定義函式<span> </span><code>add_only_even</code>，接收兩個參數用於決定加總的範圍。</p>
+</li>
+<li>
+<p><code>total = 0</code><br/>初始化一個計數器變數<span> </span><code>total</code><span> </span>為 0，將用來累加符合條件的整數。</p>
+</li>
+<li>
+<p><code>for num in range(start, end + 1):</code><br/>使用<span> </span><code>range(start, end+1)</code><span> </span>從<span> </span><code>start</code><span> </span>整數循序到<span> </span><code>end</code><span> </span>整數進行迭代。</p>
+</li>
+<li>
+<p><code>if num % 2 == 0:</code><br/>使用<span> </span><code>%</code><span> </span>運算子判斷<span> </span><code>num</code><span> </span>是否為偶數（被2整除餘數為0即為偶數）。</p>
+</li>
+<li>
+<p><code>total += num</code><br/>如果是偶數，就將<span> </span><code>num</code><span> </span>的值加到<span> </span><code>total</code><span> </span>變數中，不斷累加。</p>
+</li>
+<li>
+<p><code>return total</code><br/>當迴圈結束後，將累加結果回傳。</p>
+</li>
+<li>
+<p><code>result = add_only_even(1, 100)</code><br/>呼叫該函式以計算 1 到 100 之間的偶數加總。</p>
+</li>
+<li>
+<p><code>print(result)</code><br/>印出結果。</p>
+</li>
+</ul>
+<p><strong>執行結果與心得</strong></p>
+<p>執行後結果為<span> </span><code>2550</code>。這是 2 + 4 + 6 + ... + 100 的總和。<br/>過程中充分利用<span> </span><code>if</code><span> </span>條件與迴圈來篩選特定的值，對程式碼的控制流程很直覺明白。</p>
+<p></p>
+<p></p>
+<p></p>
+<p><span><em><strong>題目四</strong></em>: 延伸上題, 設計一個函式 add_avoid_8(1, 100), 可以完成從第一個輸入整數, 累加到第二個輸入變數的累加過程, 必須避開數字出現"8"的整數, 頁面中請以 add_avoid_8 作為連結標題.</span></p>
+<p><span>4.<a href="https://mdecp2024.github.io/hw-41323140/content/Brython.html?src=https://gist.githubusercontent.com/41323140/f010c710f0ac6fe11173c60156798f6a/raw/437d888d5eb889c2d6f46bf3a764d361429a9f18/hw4.py">add_avoid_8</a></span></p>
+<p><strong>設計思考</strong>：</p>
+<ol>
+<li>
+<p>關鍵在於 "避開出現8的數字"。我們需對每個整數檢查其字串表現形式是否包含字元<span> </span><code>'8'</code>。</p>
+</li>
+<li>
+<p>將整數<span> </span><code>num</code><span> </span>轉成字串<span> </span><code>str(num)</code>，用<span> </span><code>'8' in str(num)</code><span> </span>來判斷是否包含8這個字元。</p>
+</li>
+<li>
+<p>若不包含<span> </span><code>8</code>，則將<span> </span><code>num</code><span> </span>累加。</p>
+</li>
+</ol>
+<p><strong>程式碼範例</strong></p>
+<div>
+<div class="syntaxhighlighter html" id="highlighter_564256">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+<div class="line number6 index5 alt1">6</div>
+<div class="line number7 index6 alt2">7</div>
+<div class="line number8 index7 alt1">8</div>
+<div class="line number9 index8 alt2">9</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="html plain">def add_avoid_8(start, end):</code></div>
+<div class="line number2 index1 alt1"><code class="html spaces">    </code><code class="html plain">total = 0</code></div>
+<div class="line number3 index2 alt2"><code class="html spaces">    </code><code class="html plain">for num in range(start, end + 1):</code></div>
+<div class="line number4 index3 alt1"><code class="html spaces">        </code><code class="html plain">if '8' not in str(num):</code></div>
+<div class="line number5 index4 alt2"><code class="html spaces">            </code><code class="html plain">total += num</code></div>
+<div class="line number6 index5 alt1"><code class="html spaces">    </code><code class="html plain">return total</code></div>
+<div class="line number7 index6 alt2"> </div>
+<div class="line number8 index7 alt1"><code class="html plain">result = add_avoid_8(1, 100)</code></div>
+<div class="line number9 index8 alt2"><code class="html plain">print(result)  # 預計會把所有帶有8的數字如 8, 18, 28, 38, 48, 58, 68, 78, 80~89, 98 排除</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><strong>程式碼逐行解說</strong></p>
+<ul>
+<li>
+<p><code>def add_avoid_8(start, end):</code><br/>定義函式名稱<span> </span><code>add_avoid_8</code>，有兩個參數<span> </span><code>start</code>、<code>end</code>。</p>
+</li>
+<li>
+<p><code>total = 0</code><br/>將累加用的變數初始化為0。</p>
+</li>
+<li>
+<p><code>for num in range(start, end + 1):</code><br/>對從<span> </span><code>start</code><span> </span>到<span> </span><code>end</code><span> </span>間的每一個整數<span> </span><code>num</code><span> </span>進行迭代。</p>
+</li>
+<li>
+<p><code>if '8' not in str(num):</code><br/>將<span> </span><code>num</code><span> </span>轉為字串後，檢查字串中是否包含<span> </span><code>8</code><span> </span>字元。<br/>若不包含，就表示此數字沒有出現數字「8」，符合條件。</p>
+</li>
+<li>
+<p><code>total += num</code><br/>若符合條件(不含8)，則將該<span> </span><code>num</code><span> </span>加入<span> </span><code>total</code>。</p>
+</li>
+<li>
+<p><code>return total</code><br/>迴圈執行完畢後，回傳最終的累加結果。</p>
+</li>
+<li>
+<p><code>result = add_avoid_8(1, 100)</code><br/>呼叫該函式，以計算 1 到 100 中不含數字8的整數加總。</p>
+</li>
+<li>
+<p><code>print(result)</code><br/>印出結果。</p>
+</li>
+</ul>
+<p><strong>執行結果與心得</strong></p>
+<p>執行後的結果會略小於 5050，因為移除了所有出現<code>8</code>的數字。<br/>這個題目顯示了如何透過字串判斷來排除特定條件的數字，拓展了對整數篩選的思考方式。<br/>實際執行後，可觀察結果，並藉此驗證程式碼邏輯的正確性，並可進一步測試其他範圍或條件。</p>
+<p>(若欲得知實際結果，可執行程式碼。大致上，移除8、18、28、...、98及80~89共計19個數字，即移除的總和約為8 + 18 + 28 + 38 + 48 + 58 + 68 + 78 + (80到89的十個數字) + 98。透過實際執行，可確認結果正確性。)</p>
+<p><span></span></p>
+<p><span></span></p>
+<p><span><strong></strong></span></p><br />w14 << <a href='w14.html'>Previous</a> <a href='HW 2.html'>Next</a> >> HW 2</div>
         
     <!-- footer -->
       <div class="container">
