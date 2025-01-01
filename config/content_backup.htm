@@ -669,8 +669,38 @@ draw_three_circles(x1, y1, r1, x2, y2, r2, x3, y3, r3)</pre>
 <p><span style="color: #0000ff;"><a href="https://mdecp2024.github.io/hw-41323140/content/Brython.html?src=https://gist.githubusercontent.com/41323140/e7d489f1205730a8eef3f7f6391fdd39/raw/7b3ab7172a889dc68c8e6b1056baca97cca4f05e/exam1.py" style="color: #0000ff;">Exam1 程式碼</a></span></p>
 <div><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/E_aiVnpvClU" width="560"></iframe></div>
 <div></div>
-<div>心得:</div>
-<h1>HW 3</h1>
+<div>心得:
+<ul>
+<li><strong>結構化設計：</strong>
+<ul>
+<li>代碼清晰且層次分明，每一段都專注於繪製特定的元素，便於維護與調整。</li>
+<li>使用偏移量 (<code>offset_x</code><span> </span>和<span> </span><code>offset_y</code>) 將圖形定位相對於基準點，讓圖形的重新排列變得簡單直觀。</li>
+</ul>
+</li>
+<li><strong>多樣化形狀：</strong>
+<ul>
+<li>展現了如何利用 Canvas API 繪製多種幾何圖形（六邊形、菱形、三角形、圓形等）。</li>
+<li>顏色搭配鮮明，區分不同形狀，提升視覺效果。</li>
+</ul>
+</li>
+<li><strong>座標系統的應用：</strong>
+<ul>
+<li>通過繪製 X、Y 軸和標示原點座標，為整體設計提供了參考框架，便於後續的圖形定位。</li>
+</ul>
+</li>
+<li><strong>Canvas API 的掌握：</strong>
+<ul>
+<li>熟練運用<span> </span><code>moveTo</code>、<code>lineTo</code>、<code>arc</code><span> </span>和<span> </span><code>rect</code><span> </span>等方法進行圖形繪製，展現了對 Canvas 基本功能的靈活應用。<strong>學習收穫</strong>
+<ul>
+<li><strong>基礎圖形構建：</strong><span> </span>深入理解 Canvas 的繪圖模型，掌握從簡單線條到複雜幾何圖形的繪製方法。</li>
+<li><strong>數學與編程的結合：</strong><span> </span>通過幾何計算（如角度、圓弧等）實現形狀的精確繪製，提升數學與編程結合的能力。</li>
+<li><strong>圖形座標系統的應用：</strong><span> </span>透過偏移量與基準點的設置，靈活管理圖形的佈局與結構。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div><h1>HW 3</h1>
 <h4>主題: Python 的數字、演算法與迴圈 (20%)</h4>
 <p style="padding-left: 30px;">Python 課程教材: <a href="https://www.learnpythonwithjupyter.com/">https://www.learnpythonwithjupyter.com/</a> - PART 4 and Part 5</p>
 <p>完成上述流程整理後, 請將 HW3 自評分數輸入 cp2024 自評表單中.</p>
@@ -678,7 +708,10 @@ draw_three_circles(x1, y1, r1, x2, y2, r2, x3, y3, r3)</pre>
 <p>每六人為一組進行協同程式練習</p>
 <p>透過 Jupyterlab 協同網頁, 輪流指定各組編寫 HW 3 相關的程式練習, 以及網頁內容 (localhost 與 Codespaces 環境)編輯.</p>
 <h3>w16_exam2</h3>
-<h1>HW 4</h1>
+<p><span>題目一: 請以</span><span>自己的學號最後四碼</span><span>作為下列繪圖的左上方點座標, (例如: 若學號最後四碼為 3932, 請將 (39, 32) 作為繪圖左上方點座標), 並以紅色文字標示出該點座標 (例如: (39, 32)), 之後請利用 </span><span>pixel=2 的藍色直線</span><span>, </span><span>自訂迷宮畫布大小</span><span>, 直接在頁面畫出下列圖像, 繪圖程式除了必須直接列在頁面 html 檔案外, 也請存入自己的 Gist 區域, 並在所完成的圖像下方, 以自選標題的 anchor 連結至 Gist, 讓使用者點擊該連結後, 可以在各自的 Brython 頁面中繪出下列圖像).</span></p>
+<p><span><a href="https://mdecp2024.github.io/hw-41323140/content/Brython.html?src=https://gist.githubusercontent.com/41323140/e7d489f1205730a8eef3f7f6391fdd39/raw/245b14b39efb4b7a5d7ec370bd1b992c9589dd36/exam2.py">Exam2 程式碼</a></span></p>
+<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/VozNuTOIMek" width="560"></iframe></p>
+<p>心得:</p><h1>HW 4</h1>
 <h4>主題: 利用 Python 控制機電模擬系統 (20%)</h4>
 <p style="padding-left: 30px;">利用 <a href="https://solvespace.com/">https://solvespace.com/</a> 建立機械系統零組件</p>
 <p style="padding-left: 30px;">利用 <a href="https://www.coppeliarobotics.com/">CoppeliaSim</a> 建立機電模擬系統</p>
@@ -690,6 +723,7 @@ draw_three_circles(x1, y1, r1, x2, y2, r2, x3, y3, r3)</pre>
 <h2>HW 4 Exam</h2>
 <p>每六人為一組進行協同程式練習</p>
 <p>透過 Jupyterlab 協同網頁, 輪流指定各組編寫 HW 4 相關的程式練習, 以及網頁內容 (localhost 與 Codespaces 環境)編輯.</p>
+<h3>w16_exam3</h3>
 <h1>Final Report</h1>
 <p>期末口頭與書面專題報告 (20%)</p>
 <p>期末口頭專題報告影片:</p>
